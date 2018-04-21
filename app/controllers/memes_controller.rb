@@ -7,15 +7,13 @@ class MemesController < ApplicationController
   # GET /memes.json
   def index
     @memes = Meme.all
-
-
   end
 
   # GET /memes/1
   # GET /memes/1.json
   def show
-    #memeify(@meme.image.url)
-    #lolcat
+    new_meme = lolcat(@meme.image.url.prepend("public"), @meme.description)
+
   end
 
   # GET /memes/new
@@ -40,7 +38,7 @@ class MemesController < ApplicationController
         format.json { render json: @meme.errors, status: :unprocessable_entity }
       end
     end
-    #lolcat("public/computer-cat.jpg", @meme.description)
+    #new_meme = lolcat("public/computer-cat.jpg", @meme.description)
   end
 
   # PATCH/PUT /memes/1
@@ -67,11 +65,11 @@ class MemesController < ApplicationController
     end
   end
 
-  def lolcat
+  def lolcat(img,text)
 
-      img = ImageList.new("public/computer-cat.jpg")
+      img = ImageList.new(img)
       txt = Draw.new
-      img.annotate(txt, 0,0,0,0, "DOES THIS STILL WORK???"){
+      img.annotate(txt, 0,0,0,0, text){
       txt.gravity = Magick::SouthGravity
       txt.pointsize = 25
       txt.stroke = '#000000'
@@ -90,17 +88,6 @@ class MemesController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_meme
     @meme = Meme.find(params[:id])
-  end
-
-  def memeify(source)
-    img = MiniMagick::Image.open(source)
-    img.combine_options do |c|
-      c.gravity 'Southwest'
-      c.draw 'text 10,10 "whatever"'
-      #c.font '-*-helvetica-*-r-*-*-18-*-*-*-*-*-*-2'
-      c.fill("#FFFFFF")
-    end
-    img.write("new.jpg")
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
