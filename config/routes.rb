@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :memes
 
-  root :to => "memes#index"
+  root :to => 'memes#index'
 
   get 'users/new' => 'users#new', as: :new_user
   post 'users' => 'users#create'

@@ -1,5 +1,6 @@
+<div class="container-fluid wrapper bg-info text-white">
+  <%= image_tag('meme-logo.png', :class => "rounded mx-auto d-block img-fluid") %>
 
-<h1>Memes</h1>
 
 <table>
   <thead>
@@ -17,9 +18,9 @@
         <td><%= meme.name %></td>
         <td><%= meme.description %></td>
         <td><%= image_tag meme.image.thumb.url %></td>
-        <td><%= link_to 'Show', meme %></td>
-        <td><%= link_to 'Edit', edit_meme_path(meme) %></td>
-        <td><%= link_to 'Destroy', meme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', meme, :class => "customLink" %></td>
+        <td><%= link_to 'Edit', edit_meme_path(meme), :class => "customLink" %></td>
+        <td><%= link_to 'Destroy', meme, :class => "customLink", :role => "button", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -27,4 +28,5 @@
 
 <br>
 
-<%= link_to 'New Meme', new_meme_path %>
+<%= link_to 'New Meme', new_meme_path, :class => "customLink" %>
+</div>
