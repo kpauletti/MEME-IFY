@@ -1,24 +1,33 @@
-<h1>Sign Up Here!</h1>
+<div class="container-fluid wrapper bg-info text-white">
+  <%= image_tag('meme-logo.png', :class => "rounded mx-auto d-block img-fluid") %>
+  <div class="mx-auto" style="width: 200px;">
+    <!-- <h1>Sign Up Here!</h1> -->
+    <br>
+    <br>
 
-<%= form_for @user do |f| %>
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name, autofocus: true %>
-  </div>
-  <div>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
+    <%= form_for @user do |f| %>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name, autofocus: true %>
+    </div>
+    <div>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
 
-  <div>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-  <div>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div>
-    <%= f.submit "Sign up!" %>
-  </div>
-<% end %>
+    <div>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+    <div>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </div>
+    <div>
+      <br>
+      <%= f.submit "Sign up!", :class => "btn btn-dark" %>
+    </div>
+    <% end %>
+
+</div>
+</div>

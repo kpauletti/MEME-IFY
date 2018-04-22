@@ -1,3 +1,6 @@
+<div class="wrapper bg-info text-white">
+<div class="mx-auto" style="width: 200px;">
+
 <h1>Log In</h1>
 <%= form_for :login do |f| %>
   <div>
@@ -9,6 +12,9 @@
     <%= f.password_field :password %>
   </div>
   <div>
-    <%= f.submit "Log In" %>
+    <br>
+    <%= f.submit "Log In" , :class => "btn btn-dark"%>
   </div>
 <% end %>
+</div>
+</div>
