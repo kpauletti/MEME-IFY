@@ -2,25 +2,18 @@
 
 <p id="notice"><%= notice %></p>
 
+
+
+<p>
+  <%=  image_tag @meme.image.url%>
+</p>
+
 <p>
   <strong>Name:</strong>
   <%= @meme.name %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @meme.description %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%=  image_tag @meme.image.url%>
-</p>
-
 <%= link_to 'Edit', edit_meme_path(@meme) %> |
 <%= link_to 'Back', memes_path %>
 
-
-<h3>MEME-IFY</h3>
-<%= text_field_tag("TEXT") %>
 </div>
