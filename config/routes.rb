@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'pages/secret'
   # root "memes#index"
+
   resources :memes
 
   root :to => "memes#index"
