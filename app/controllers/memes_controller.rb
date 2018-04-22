@@ -12,7 +12,8 @@ class MemesController < ApplicationController
   # GET /memes/1
   # GET /memes/1.json
   def show
-    new_meme = lolcat(@meme.image.url.prepend("public"), @meme.description)
+    # @meme = lolcat(@meme.image.url.prepend("public"), @meme.description)
+
 
   end
 
@@ -29,6 +30,7 @@ class MemesController < ApplicationController
   # POST /memes.json
   def create
     @meme = Meme.new(meme_params)
+    @meme.write_meme
     respond_to do |format|
       if @meme.save
         format.html { redirect_to @meme, notice: 'Meme was successfully created.' }
@@ -38,7 +40,7 @@ class MemesController < ApplicationController
         format.json { render json: @meme.errors, status: :unprocessable_entity }
       end
     end
-    #new_meme = lolcat("public/computer-cat.jpg", @meme.description)
+    # @meme = lolcat("public/computer-cat.jpg", @meme.description)
   end
 
   # PATCH/PUT /memes/1
@@ -65,22 +67,7 @@ class MemesController < ApplicationController
     end
   end
 
-  def lolcat(img,text)
 
-      img = ImageList.new(img)
-      txt = Draw.new
-      img.annotate(txt, 0,0,0,0, text){
-      txt.gravity = Magick::SouthGravity
-      txt.pointsize = 25
-      txt.stroke = '#000000'
-      txt.fill = '#ffffff'
-      txt.font_weight = Magick::BoldWeight
-    }
-
-    img.format = 'jpeg'
-    send_data img.to_blob, :stream => 'false', :filename => 'test.jpg', :type => 'image/jpeg', :disposition => 'inline'
-
-  end
 
 
 

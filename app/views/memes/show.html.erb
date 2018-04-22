@@ -12,8 +12,7 @@
 
 <p>
   <strong>Image:</strong>
-  <%= image_tag lolcat("public/computer-cat.jpg", @meme.description) %>
-   <%#= memeify(@meme.image.url) %>
+  <%=  image_tag @meme.image.url%>
 </p>
 
 <%= link_to 'Edit', edit_meme_path(@meme) %> |
