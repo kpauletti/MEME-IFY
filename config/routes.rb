@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  root "memes#index"
-  resources :memes
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'pages/secret'
+  # root "memes#index"
+  # resources :memes
+
+  root to: 'users#new'
+  get 'users/new' => 'users#new', as: :new_user
+  post 'users' => 'users#create'
+
+  get '/login'     => 'sessions#new'
+  post '/login'    => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
+
 end
