@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   get 'pages/secret'
   # root "memes#index"
-   resources :memes
 
-  root to: 'users#new'
+  resources :memes
+
+  root :to => "memes#index"
+
   get 'users/new' => 'users#new', as: :new_user
   post 'users' => 'users#create'
 

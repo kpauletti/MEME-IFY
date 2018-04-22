@@ -2,6 +2,8 @@ require 'rmagick'
 class MemesController < ApplicationController
   include Magick
   before_action :set_meme, only: [:show, :edit, :update, :destroy]
+  before_action :authorize
+
 
   # GET /memes
   # GET /memes.json
@@ -76,6 +78,10 @@ class MemesController < ApplicationController
   def set_meme
     @meme = Meme.find(params[:id])
   end
+
+  # def authorize_user
+
+  # end 
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def meme_params
