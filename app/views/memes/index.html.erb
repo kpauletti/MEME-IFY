@@ -1,32 +1,34 @@
-<div class="container-fluid wrapper bg-info text-white">
+<div class="container-fluid wrapper text-white">
   <%= image_tag('meme-logo.png', :class => "rounded mx-auto d-block img-fluid") %>
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @memes.each do |meme| %>
+<div class="container">
+<div class="table-responsive">
+  <table class="table">
+    <thead class="thead-light">
       <tr>
-        <td><%= meme.name %></td>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Image</th>
+        <th colspan="3" scope="col"></th>
+      </tr>
+    </thead>
+
+    <tbody class="table-dark">
+      <% @memes.each do |meme| %>
+      <tr>
+        <td ><%= meme.name %></td>
         <td><%= meme.description %></td>
         <td><%= image_tag meme.image.thumb.url %></td>
-        <td><%= link_to 'Show', meme, :class => "customLink" %></td>
-        <td><%= link_to 'Edit', edit_meme_path(meme), :class => "customLink" %></td>
-        <td><%= link_to 'Destroy', meme, :class => "customLink", :role => "button", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', meme, :class => "btn btn-light" %></td>
+        <td><%= link_to 'Edit', edit_meme_path(meme), :class => "btn btn-light" %></td>
+        <td><%= link_to 'Destroy', meme, :class => "btn btn-light", :role => "button", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</div>
 
 <br>
 
-<%= link_to 'New Meme', new_meme_path, :class => "customLink" %>
+<%= link_to 'New Meme', new_meme_path, :class => "btn btn-light", :role => "button" %>
 </div>

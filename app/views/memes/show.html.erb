@@ -1,4 +1,4 @@
-<div class="container-fluid wrapper bg-info text-white">
+<div class="container-fluid wrapper text-white">
 
 <p id="notice"><%= notice %></p>
 
@@ -13,7 +13,7 @@
   <%= @meme.name %>
 </p>
 
-<%= link_to 'Edit', edit_meme_path(@meme) %> |
-<%= link_to 'Back', memes_path %>
+<%= link_to 'Edit', edit_meme_path(@meme), :class => "btn btn-dark" %> |
+<%= link_to 'Back', memes_path, :class => "btn btn-outline-light" %>
 
 </div>

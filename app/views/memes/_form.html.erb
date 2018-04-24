@@ -10,22 +10,22 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :name, :for => "exampleInputName1" %><br>
+    <%= f.text_field :name, autofocus: true, :class => "form-control", :id => "exampleInputName1", :placeholder => "Name"  %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.label :description, :for => "exampleFormControlTextarea1" %><br>
+    <%= f.text_area :description, :class => "form-control", :id => "exampleFormControlTextarea1", :row => "3"%>
   </div>
+  <br>
   <div class="field">
     <%= f.label :image, class: "btn btn-dark" do  %>
-      Choose file
+      Upload Image
       <%= f.file_field :image, :class => "d-none" %>
     <% end %>
   </div>
   <div class="actions">
-    <%= f.submit 'Submit', :class => "btn btn-dark" %>
+    <%= f.submit 'Submit', :class => "btn btn-light"%>
   </div>
 <% end %>

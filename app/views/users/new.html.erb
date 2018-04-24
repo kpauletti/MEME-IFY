@@ -1,33 +1,31 @@
-<div class="container-fluid wrapper bg-info text-white">
+<div class="container-fluid wrapper text-white">
   <%= image_tag('meme-logo.png', :class => "rounded mx-auto d-block img-fluid") %>
-  <div class="mx-auto" style="width: 200px;">
+  <div class="mx-auto" style="width: 350px;">
     <!-- <h1>Sign Up Here!</h1> -->
     <br>
     <br>
+    <%= form_for @user,:html => {:class => "form-horizontal center"} do |f| %>
+    <div>
+      <%= f.label :name, :for => "exampleInputName1" %>
+      <%= f.text_field :name, autofocus: true, :class => "form-control", :id => "exampleInputName1", :placeholder => "Name"  %>
+    </div>
+    <div>
+      <%= f.label :email, :for => "exampleInputEmail1" %>
+      <%= f.text_field :email, autofocus: true, :class => "form-control", :id => "exampleInputEmail1", :placeholder => "Enter Email"  %>
+    </div>
 
-    <%= form_for @user do |f| %>
     <div>
-      <%= f.label :name %>
-      <%= f.text_field :name, autofocus: true %>
+      <%= f.label :password, :for => "exampleInputpassword1" %>
+      <%= f.text_field :password, autofocus: true, :class => "form-control", :id => "exampleInputPassword1", :placeholder => "Password"  %>
     </div>
     <div>
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-    </div>
-
-    <div>
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-    </div>
-    <div>
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.label :password_confirmation, :for => "exampleInputpassword1" %>
+      <%= f.text_field :password, autofocus: true, :class => "form-control", :id => "exampleInputPassword1", :placeholder => "Confirm Password"  %>
     </div>
     <div>
       <br>
-      <%= f.submit "Sign up!", :class => "btn btn-dark" %>
+      <%= f.submit "Sign Up", :class => "btn btn-light" %>
     </div>
     <% end %>
-
-</div>
+  </div>
 </div>

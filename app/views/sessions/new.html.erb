@@ -1,19 +1,20 @@
-<div class="container-fluid wrapper bg-info text-white">
+<div class="container-fluid wrapper text-white">
   <%= image_tag('meme-logo.png', :class => "rounded mx-auto d-block img-fluid") %>
-<div class="mx-auto" style="width: 200px;">
+<div class="mx-auto" style="width: 350px;">
 
-<%= form_for :login do |f| %>
+
+<%= form_for :login, :html => {:class => "form-horizontal center"}  do |f| %>
   <div>
-    <%= f.label :email %>
-    <%= f.text_field :email, autofocus: true %>
+    <%= f.label :email, :for => "exampleInputEmail1" %>
+    <%= f.text_field :email, autofocus: true, :class => "form-control", :id => "exampleInputEmail1", :placeholder => "Enter Email"  %>
   </div>
   <div>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.label :password, :for => "exampleInputpassword1" %>
+    <%= f.text_field :password, autofocus: true, :class => "form-control", :id => "exampleInputPassword1", :placeholder => "Password"  %>
   </div>
   <div>
     <br>
-    <%= f.submit "Log In" , :class => "btn btn-dark"%>
+    <%= f.submit "Log In" , :class => "btn btn-light"%>
   </div>
 <% end %>
 </div>

@@ -1,10 +1,12 @@
-<div class="container-fluid wrapper bg-info text-white">
-  <div class="mx-auto" style="width: 200px;">
+<div class="container-fluid wrapper text-white">
+  <%= image_tag('meme-logo.png', :class => "rounded mx-auto d-block img-fluid") %>
+<div class="mx-auto" style="width: 400px;">
 
 
-<h1>New Meme</h1>
+<h1>Create a New Meme</h1>
 
 <%= render 'form', meme: @meme %>
-
-<%= link_to 'Back', memes_path %>
+<br>
+<%= link_to 'Back', memes_path, :class => "btn btn-outline-light" %>
+</div>
 </div>

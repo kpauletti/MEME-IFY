@@ -13,7 +13,13 @@
  *= require_tree .
  *= require_self
  */
+ body {
+  background-image: url('/assets/background.jpg');
+}
+
+
  .wrapper {
+   background-image:
    overflow: auto;
    height: calc(100vh - 56px);
    display: flex;
@@ -25,15 +31,3 @@
 /* .customLink, .customLink:hover{
 
 } */
-.customLink, .customLink:visited {
-    background-color: #ffffff;
-    color: black;
-    padding: 14px 25px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-}
-
- .customLink:active {
-    background-color: red;
-}
