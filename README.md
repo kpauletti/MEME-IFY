@@ -1,24 +1,16 @@
-# README
+# Meme-ify
+## Meme maker / Photo album
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+http://wyncode-memeify.herokuapp.com/
 
-Things you may want to cover:
 
-* Ruby version
+Memeify is a Ruby on Rails web app for uploading photos and adding text onto those photos.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The memeify web app uses:
+ 
+ * RMagick gem for image manipulation
+ * BCrypt for user signup/login
+ * Carrierwave for image uploading
+ * Bootstrap/Sass for styling
+ 
+ This was our first app, built for our friends and family project, brought to you by myself, Adi Nelson, and Stephani Oliveira
